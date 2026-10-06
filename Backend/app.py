@@ -1,11 +1,15 @@
 import os
 import tempfile
 import base64
+from pathlib import Path
 
 import requests
+from dotenv import load_dotenv
 from flask import Flask, request
 from flask_cors import CORS
 from google import genai
+
+load_dotenv(Path(__file__).with_name(".env"))
 
 app = Flask(__name__)
 CORS(app)
@@ -28,7 +32,7 @@ Focus on:
 Keep the explanation concise, engaging, and easy to follow.
 Avoid excessive details and dates.
 Limit the response to around 200 words.
-s
+
 Respond ONLY in {language}.
 """,
 
